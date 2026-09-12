@@ -1,1 +1,15 @@
+# Build output
 /bin/
+/target/
+*.class
+
+# Eclipse workspace state (the project files remain versioned)
+/.metadata/
+
+# Local Google OAuth credentials and generated authorization state
+/resources/client_secret_*.json
+/tokens/
+
+# SQLite transient files; alerts.db itself is retained as sample evidence.
+*.db-shm
+*.db-wal

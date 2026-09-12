@@ -179,3 +179,35 @@ Suspicious extension detected: monitor_folder/data.locked
 2025-10-17 08:53:21 - File quarantined: hi.txt
 2025-10-17 08:53:21 - Ransom note found in: monitor_folder\hi.txt
 2025-10-17 08:53:23 - Suspicious network activity detected
+2025-10-20 00:53:27 - File quarantined: HelloWorld.txt
+2025-10-20 00:53:27 - Ransom note found in: monitor_folder\HelloWorld.txt
+2025-10-20 00:53:30 - Suspicious network activity detected
+2025-10-20 00:55:13 - File quarantined: HelloWorld.txt
+2025-10-20 00:55:13 - Mass modification detected in: HelloWorld.txt
+2025-10-20 00:55:52 - Suspicious network activity detected
+2025-11-05 17:11:15 - File quarantined: decoy_document.docx
+2025-11-05 17:11:15 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-05 17:11:18 - Suspicious network activity detected
+2025-11-05 20:24:51 - Suspicious network activity detected
+2025-11-05 20:25:19 - File quarantined: decoy_document.docx
+2025-11-05 20:25:19 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-05 20:25:20 - Suspicious network activity detected
+2025-11-05 20:39:37 - File quarantined: decoy_document.docx
+2025-11-05 20:39:37 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-05 20:39:37 - Suspicious network activity detected
+2025-11-05 21:47:05 - File quarantined: decoy_document.docx
+2025-11-05 21:47:05 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-05 21:47:05 - Suspicious network activity detected
+2025-11-06 10:55:13 - File quarantined: decoy_document.docx
+2025-11-06 10:55:13 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-06 10:55:13 - Failed to quarantine file: decoy_document.docx - quarantine\decoy_document.docx
+2025-11-06 10:55:13 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-06 10:55:14 - Suspicious network activity detected
+2025-11-06 10:55:14 - Suspicious network activity detected
+2025-11-06 11:00:23 - File quarantined: decoy_document.docx
+2025-11-06 11:00:23 - Ransom note found in: monitor_folder\decoy_document.docx
+2025-11-06 11:00:23 - Suspicious network activity detected
+2025-11-06 11:27:38 - Suspicious network activity detected
+2025-11-06 11:44:19 - Suspicious network activity detected
+2026-09-12 11:40:06 - File quarantined: decoy_document.docx -> 20260912-114006-174306cd-decoy_document.docx
+2026-09-12 11:40:06 - Ransom note found in: monitor_folder\decoy_document.docx

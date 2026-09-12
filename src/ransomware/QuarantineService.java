@@ -3,6 +3,9 @@ package ransomware;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 public class QuarantineService {
     private static final String QUARANTINE_DIR = "quarantine";
@@ -21,14 +24,25 @@ public class QuarantineService {
 
 
     public void quarantine(String filename) {
-        Path sourcePath = Paths.get("monitor_folder", filename);
-        Path targetPath = Paths.get(QUARANTINE_DIR, filename);
+        Path monitorDirectory = Paths.get("monitor_folder").toAbsolutePath().normalize();
+        Path sourcePath = monitorDirectory.resolve(filename).normalize();
+
+        if (!sourcePath.startsWith(monitorDirectory)) {
+            System.out.println("[QuarantineService] Refusing to quarantine a path outside the monitored directory.");
+            return;
+        }
 
         try {
             if (Files.exists(sourcePath)) {
-                Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("[QuarantineService] File quarantined: " + filename);
-                AlertLogger.log("File quarantined: " + filename);
+                String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
+                String safeName = sourcePath.getFileName().toString();
+                String quarantinedName = timestamp + "-" + UUID.randomUUID().toString().substring(0, 8) + "-" + safeName;
+                Path targetPath = Paths.get(QUARANTINE_DIR, quarantinedName);
+
+                Files.move(sourcePath, targetPath);
+                String message = "File quarantined: " + safeName + " -> " + quarantinedName;
+                System.out.println("[QuarantineService] " + message);
+                AlertLogger.log(message);
             } else {
                 System.out.println("[QuarantineService] File not found for quarantine: " + filename);
             }
